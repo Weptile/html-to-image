@@ -198,7 +198,7 @@ export function canvasToBlob(
 
 export function createImage(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
-    const img = new Image()
+    const img = document.createElement('img')
     img.onload = () => {
       img.decode().then(() => {
         requestAnimationFrame(() => resolve(img))

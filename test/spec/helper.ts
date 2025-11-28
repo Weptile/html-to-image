@@ -71,7 +71,7 @@ async function fetchFile(fileName: string) {
 function makeImage(src: string) {
   // console.log(src)
   return new Promise<HTMLImageElement>((resolve) => {
-    const image = new Image()
+    const image = document.createElement('img')
     image.onload = () => resolve(image)
     image.src = src
   })
